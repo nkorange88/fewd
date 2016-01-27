@@ -1,0 +1,18 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+  $.get("http://omdbapi.com/?s=matrix", resultsReceived)
+
+  function resultsReceived(results){
+    console.log("here", results);
+
+    for (var i = 0; i < results["Search"].length; i++) {
+    console.log(i,results["Search"][i])
+    var array = results["Search"][i];
+
+    createMovie(array["title"], array["imdb"], array["Year"]);
+    }
+
+
+  }
+</script>

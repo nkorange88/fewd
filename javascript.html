@@ -1,0 +1,47 @@
+<script type="text/javascript">
+  var firstName = "Fernando";
+  var lastName = "Altamirano";
+  var space= " "
+  var fullName = firstName + space + lastName;
+
+  var x = 10
+  var y = 5
+  var sum = x+y
+  var difference = x-y
+  var product = x*y
+  var quotient = x/y
+
+  // firstName= prompt("What is your first name");
+  // lastName= prompt("What is your last name");
+  // fullName= alert("Hello" + space + firstName + space + lastName);
+
+  // var km = 144;
+  // var half= km/2;
+  // var quarter= half/4;
+  // var mile= quarter + half + space + "miles";
+
+  function convertkilometersToMiles(km){
+    var half= km/2;
+    var quarter= half/4;
+    var miles= quarter + half;
+
+    return miles;
+  }
+
+  function calcTurkeyCookTime (kg, stuf) {
+    if (stuf){
+       return (kg*28) +108;
+    }
+    else{
+      return (kg*19)+124;
+    }
+  }
+
+  function calcCADtoUSD (CAD){
+        return CAD*(3/4)
+      }
+
+  function calcSavings (monthlySave, months){
+    return "$" + months*monthlySave
+  }
+</script>

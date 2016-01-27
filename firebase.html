@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script >
+      var firebase = new Firebase("https://blinding-inferno-7422.firebaseio.com");
+
+      firebase.push({
+        messageBody: "Avand",
+        username: "Avand",
+      })
+
+      firebase.on('child_added', function (snapshot) {
+  var data = snapshot.val();
+});
+    </script>
+  </body>
+</html>

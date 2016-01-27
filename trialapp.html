@@ -1,0 +1,37 @@
+<button id="login">Login in to see your events</button>
+<ul id="events">
+</ul>
+<script>
+document.querySelector("button").addEventListener("click", function(event) {
+  event.preventDefault();
+  FB.login(function(response) {
+    if (response.authResponse) {
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+       console.log('Good to see you, ' + response.name + '.');
+     });
+    } else {
+     console.log('User cancelled login or did not fully authorize.');
+    }
+  }, {scope: 'user_events,user_relationships, user_friends, public_profile, user_likes, user_photos'});
+});
+window.fbAsyncInit = function() {
+  FB.init({
+      appId      : '999908883414664',
+      xfbml      : true,
+  version    : 'v2.5'
+});
+};
+(function(d, s, id){
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+function(createList) {
+  for (var i = 0; i < data[i].length; i++) {
+  var ul = $("#events");
+  var li = $("<li>").text(data[i][name]).appendTo(ul);
+};
+</script>
